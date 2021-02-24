@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Components/Checkout";
 import Login from "./Components/Login";
+import Payment from "./Components/Payments";
 import { auth } from "./Services/UserAuth";
 import { useStateValue } from "./Context/StateProvider";
 
@@ -34,6 +35,10 @@ function App() {
             <Login />
           </Route>
           <Route path="/checkout" exact component={Checkout}>
+            <Route path="/payment" exact component={Payment}>
+              <Header />
+              <Payment />
+            </Route>
             <Header />
             <Checkout />
           </Route>
